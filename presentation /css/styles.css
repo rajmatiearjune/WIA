@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*tab*/
+.active{
+	border:solid 1px #ddd;
+	border-bottom: none;
+	z-index: 2;
+	background: #FFCC00;;
+}
+
+.tab-bar p{
+	border-top: solid 1px #ddd;
+	margin: 0px;
+	margin-top: -1px;
+	font-size: 170%;  
+ 	padding: 40px 20px;
+	display: none;
+	position: absolute;
+ 	width: 100%;
+	
+}
+
+.tab-bar{
+	margin-top: 30px;
+	height: 100px;
+	font-family:Tahoma, Geneva, sans-serif;
+  	color: #003366;
+	
+}
+
+.tab-bar h2{
+	padding: 8px 15px;
+	font-size: 100%;
+	font-weight: 100;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0px;
+	position: relative;
+}
+
+.tab-bar h2:hover{
+	background: #FFFFCC;
+	cursor: pointer;
+}
+
+.active + p {
+  display: block;
+  color: #000033;
+ 
+}
+/*End CSS example*/
+
+/*Other CSS*/
+body{
+  font-family: helvetica;
+  font-size: 1.2em;
+  
+}
+
+.button{
+	width:230px;
+	height: 40px;
+	margin-top: 50px;
+  background: -webkit-radial-gradient(center, circle cover, #555a5f 0%, #1c1e80 50%);
+  background: -o-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background: -ms-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background: radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background-color: #2b2b2b;
+	
+	}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  width: 40%;
+}
+
+#main{
+
+	animation-duration: 1;
+	transition-timing-function: ease-in-out;
+	}
+
+
+.container{ 
+   margin-top: 15px; 
+   margin-left: 5%;
+   margin-right: 5%;
+   background-color: #FFFFFF;
+   width: 90%;
+  
+}
+
+.header{
+	margin-left: 5%;
+	margin-top: 2%;
+	animation:ease-in;
+	
+	
+	}
+
+.accordion {
+  width: 90%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.accordion .item .heading {
+  height: 50px;
+  line-height: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  color: #fff;
+  padding-left: 15px;
+  background-position: right 20px top -95px;
+  border-bottom: 1px solid #ec8484;
+  box-sizing: border-box;
+}
+
+.accordion .item .heading .fa-chevron-circle-down{
+  float: right;
+  padding: 15px;
+  
+  
+}
+
+.accordion .item.open .heading,
+.accordion .item:last-child .heading {
+  border: 0;
+}
+
+.accordion .item.open .heading {
+  background-position: right 20px top -5px;
+}
+
+.accordion .item .content {
+  padding: 0px 20px;
+  background: #eee;
+  font-size: 14px;
+  height:0;
+  overflow:hidden;
+  color: #7f8c8d;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion .item.open .content {
+  height: 100px;
+  padding: 20px;
+}
+
+.blue{
+  background-color: #354D8E;
+}
+
+.brown{
+  background-color: #BB815A;
+}
+
+.blue1{
+  background-color:#0380CE;
+}
+
+.red{
+  background-color: #D4311E;  
+}
+
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Mobile Layout: 480px and below. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: auto;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+
